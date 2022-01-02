@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-#import os
-#import django_heroku
+import cloudinary
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'corsheaders',
+    
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 AUTH_USER_MODEL = 'base.User'
@@ -150,6 +153,13 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dtdf8rlzb',
+    'API_KEY': '429398995622691',
+    'API_SECRET': '5i6c2qGz_2ckjO5rQnpgbqPDThc',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 #django_heroku.settings(locals())
 
