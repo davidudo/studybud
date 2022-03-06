@@ -13,8 +13,7 @@ if (searchForm) {
 
             //ADD HIDDEN SEARCH INPUT TO FORM
             searchForm.innerHTML += `<input value=${page} name="page" hidden/>`
-
-
+            
             //SUBMIT FORM
             searchForm.submit()
         })

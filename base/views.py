@@ -97,6 +97,7 @@ def home(request):
     'room_count': room_count,
     'room_messages': room_messages,
     'custom_range': custom_range,
+    'q': q,
   }
   return render(request, 'base/home.html', context)
   
