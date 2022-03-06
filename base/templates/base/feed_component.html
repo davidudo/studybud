@@ -43,6 +43,9 @@
 
 {% endfor %}
 
+<div class="projects">
+  {% include 'pagination.html' with queryset=rooms custom_range=custom_range %}
+</div>
 
 
 <!--{% for room in rooms %}

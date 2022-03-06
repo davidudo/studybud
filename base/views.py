@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from .models import Room, Topic, Message, User
 from .forms import RoomForm, UserForm, MyUserCreationForm
+from .utils import paginateRooms
 
 # Create your views here
 
@@ -88,11 +89,14 @@ def home(request):
     Q(room__topic__name__icontains = q)
   )
   
+  custom_range, rooms = paginateRooms(request, rooms, 1)
+  
   context = { 
     'rooms': rooms, 
     'topics': topics,  
     'room_count': room_count,
-    'room_messages': room_messages
+    'room_messages': room_messages,
+    'custom_range': custom_range,
   }
   return render(request, 'base/home.html', context)
   
