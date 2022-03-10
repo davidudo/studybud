@@ -1,50 +1,71 @@
+<div align="center">
+<img width="30%" src="https://user-images.githubusercontent.com/72341453/134747028-7e2d90cc-a92f-4f66-815e-54a0d50cca54.PNG">
 
-# Study Bud (Django Web App)
+# StudyBuddy
+</div>
 
-This project was created from this [YouTube crash course](https://www.youtube.com/watch?v=w7ejDZ8SWv8).
-Study Bud is a web app where people can come together and discuss about topics that interest them.
+--> Check out the live demo here: https://studybudweb.herokuapp.com/
 
-## Features
+### Cloning the repository
 
-1. Register and login page
-2. Profile page
-3. Search
-4. Messaging
-5. CRUD operations
-
-
-## Run Locally
-
-Clone the project
-
+--> Clone the repository using the command below :
 ```bash
-  git clone https://link-to-project
+git clone https://github.com/davidudo/studybud.git
+
 ```
 
-Go to the project directory
-
+--> Move into the directory where we have the project files : 
 ```bash
-  cd my-project
+cd StudyBud
+
 ```
 
-Install dependencies
-
+--> Create a virtual environment :
 ```bash
-  pip -r install requirements.txt
+# Let's install virtualenv first
+pip install virtualenv
+
+# Then we create our virtual environment
+virtualenv envname
+
 ```
 
-Run Django dev server (http://localhost:8000)
-
+--> Activate the virtual environment :
 ```bash
-  python manage.py runserver
+envname\scripts\activate
+
 ```
 
+--> Install the requirements :
+```bash
+pip install -r requirements.txt
 
-## Demo
+```
 
-Check out the [demo](https://studybudweb.herokuapp.com)
+#
 
+### Running the App
 
-## More
+--> To run the App, we use :
+```bash
+python manage.py runserver
 
-For more information [click here](https://www.notion.so/Study-Buddy-99c28508776943368e72f37e3c2d03ab)
+```
+
+> ⚠ Then, the development server will be started at http://127.0.0.1:8000/
+
+#
+
+### App Preview :
+
+<div width="100%"> 
+<p align="center">
+  Feed Home
+</p>
+<img src="https://user-images.githubusercontent.com/72341453/134747262-0a92233d-8010-40f8-84c5-8d94895aac44.PNG">
+
+<p align="center">
+  Room Conversation Preview
+</p>
+<img src="https://user-images.githubusercontent.com/72341453/134747155-3ca5b55f-b064-4741-aeae-abe90bddf41e.PNG">  
+</div>
