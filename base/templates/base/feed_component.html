@@ -16,6 +16,7 @@
   
   <div class="roomListRoom__content">
     <a href="{% url 'room' room.id  %}">{{ room.name }}</a>
+    <p>{{ room.description|slice:":255" }}</p>
   </div>
   
   <div class="roomListRoom__meta">

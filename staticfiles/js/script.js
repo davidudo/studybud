@@ -42,17 +42,6 @@
 //   });
 // }
 
-// Menu
-let alertWrapper = document.querySelector('.alert')
-let alertClose = document.querySelector('.alert__close')
-
-if (alertWrapper) {
-  alertClose.addEventListener('click', () =>
-    alertWrapper.style.display = 'none'
-  )
-}
-
-
 const dropdownMenu = document.querySelector(".dropdown-menu");
 const dropdownButton = document.querySelector(".dropdown-button");
 
