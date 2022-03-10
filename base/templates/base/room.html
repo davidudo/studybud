@@ -17,8 +17,9 @@
           </a>
           <h3>Study Room</h3>
         </div>
-        {% if room.host == request.user %}
+        
         <div class="room__topRight">
+          {% if room.host == request.user %}
           <a href="{% url 'update-room' room.id %}">
             <svg enable-background="new 0 0 24 24" height="32" viewBox="0 0 24 24" width="32"
               xmlns="http://www.w3.org/2000/svg">
@@ -38,6 +39,7 @@
               </g>
             </svg>
           </a>
+          
           <a href="{% url 'delete-room' room.id %}">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <title>remove</title>
@@ -46,10 +48,10 @@
               </path>
             </svg>
           </a>
+          {% endif %}
         </div>
-        {% endif %}
-
       </div>
+      
       <div class="room__box scroll">
         <div class="room__header scroll">
           <div class="room__info">
@@ -111,15 +113,16 @@
         </div>
       </div>
       
-      {% if request.user.is_authenticated %}
+
       <div class="room__message">
+        {% if request.user.is_authenticated %}
         <form action="" method="POST">
           {% csrf_token %}
           <input name="body" placeholder="Write your message here..." />
         </form>
+        {% endif %}
       </div>
     </div>
-    {% endif %}
     <!-- Room End -->
 
     <!--   Start -->

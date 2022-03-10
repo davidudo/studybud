@@ -9,32 +9,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
     <title>StudyBuddy - Find study partners around the world!</title>
   </head>
 
   <body>
     {% include 'navbar.html' %}
     
-    <div class="container">
     {% if messages %}
-      <ul class="message">
-          {% for message in messages %}
-          
-          <li>{{ message }}</li>
-          
-          {% endfor %}
-      </ul>
+
+    {% for message in messages %}
+      <div class="container display__overall">
+      <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        {{ message }}
+      </div>
+      </div>
+    {% endfor %}
+
     {% endif %}
-    </div>
     
     {% block content %}
     
   
     {% endblock content %}
     
-    <script src="{% static 'js/script.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
   </body>
   
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
 </html>

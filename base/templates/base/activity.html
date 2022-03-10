@@ -58,6 +58,10 @@
         
         {% endfor %}
         
+        <div class="projects">
+  {% include 'pagination.html' with queryset=room_messages custom_range=custom_range %}
+</div>
+        
       </div>
     </div>
   </div>

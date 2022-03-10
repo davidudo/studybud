@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from .models import Room, Topic, Message, User
 from .forms import RoomForm, UserForm, MyUserCreationForm
-from .utils import paginateRooms
+from .utils import paginateRooms, paginateActivity
 
 # Create your views here
 
@@ -87,9 +87,9 @@ def home(request):
   room_count = rooms.count()
   room_messages = Message.objects.filter(
     Q(room__topic__name__icontains = q)
-  )
+  )[0:5]
   
-  custom_range, rooms = paginateRooms(request, rooms, 1)
+  custom_range, rooms = paginateRooms(request, rooms, 8)
   
   context = { 
     'rooms': rooms, 
@@ -152,7 +152,12 @@ def topicsPage(request):
 def activityPage(request):
   room_messages = Message.objects.all()
   
-  context = { 'room_messages': room_messages }
+  custom_range, room_messages = paginateActivity(request, room_messages, 3)
+  
+  context = { 
+    'room_messages': room_messages,
+    'custom_range': custom_range,
+  }
   return render(request, 'base/activity.html', context)
   
   
@@ -260,5 +265,7 @@ def updateUser(request):
     if form.is_valid():
       form.save()
       return redirect('user-profile', pk = user.id)
+    else:
+      messages.error(request, 'An error occurred while updating your profile!')
   
   return render(request, 'base/update_user.html', { 'form': form })
