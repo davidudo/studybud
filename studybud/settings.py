@@ -14,6 +14,7 @@ from pathlib import Path
 import cloudinary
 import cloudinary_storage
 import environ
+import dj_database_url
 
 # Initialise environment 
 variablesenv = environ.Env()
@@ -31,9 +32,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY') or env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False # 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com']
+
+"""RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+
+if RENDER_EXTERNAL_HOSTNAME: ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)"""
 
 
 # Application definition
@@ -105,8 +110,8 @@ DATABASES = {
     }
 }
 
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
+# import dj_database_url 
+prod_db  =  dj_database_url.config(default='postgres://studybud_user:hB4C47DFcnaxSdrM4ggkG1clffBRiNgE@dpg-ceongapgp3jlcsk7k9r0-a/studybud', conn_max_age=500)
 DATABASES['default'].update(prod_db)
 
 
