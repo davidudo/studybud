@@ -32,14 +32,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY') or env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False # 'RENDER' not in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com']
-
-"""RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-
-if RENDER_EXTERNAL_HOSTNAME: ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)"""
-
 
 # Application definition
 
@@ -103,12 +98,12 @@ WSGI_APPLICATION = 'studybud.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+}"""
 
 # import dj_database_url 
 prod_db  =  dj_database_url.config(default='postgres://studybud_user:hB4C47DFcnaxSdrM4ggkG1clffBRiNgE@dpg-ceongapgp3jlcsk7k9r0-a/studybud', conn_max_age=500)
