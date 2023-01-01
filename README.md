@@ -16,7 +16,7 @@ git clone https://github.com/davidudo/studybud.git
 
 --> Move into the directory where we have the project files : 
 ```bash
-cd StudyBud
+cd studybud
 
 ```
 
@@ -32,7 +32,7 @@ virtualenv envname
 
 --> Activate the virtual environment :
 ```bash
-envname\scripts\activate
+source env/bin/activate
 
 ```
 
@@ -40,6 +40,14 @@ envname\scripts\activate
 ```bash
 pip install -r requirements.txt
 
+```
+
+--> Create a `.env` and add the following environment variables
+```
+SECRET_KEY
+CLOUD_NAME
+API_KEY
+API_SECRET
 ```
 
 #
