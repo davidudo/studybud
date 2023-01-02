@@ -100,7 +100,7 @@ python manage.py runserver
 
 ### App API
 
-A sample website was created to demonstrate the use of an API route from the Django app. You can check out the website through this [link](). This route gets the details of all rooms created. An example of how the API can be used is shown below.
+A sample website was created to demonstrate the use of an API route from the Django app. You can check out the code website through this [link](./apiexample.html). This route gets the details of all rooms created. An example of how the API can be used is shown below.
 
 --> Request
   - GET
