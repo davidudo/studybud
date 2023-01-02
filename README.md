@@ -50,6 +50,24 @@ API_KEY
 API_SECRET
 ```
 
+--> Go to `settings.py` and uncomment or change the following lines of code to setup local environment
+```python
+import enivron
+
+variablesenv = environ.Env()
+environ.Env.read_env()
+
+SECRET_KEY = os.getenv('SECRET_KEY') # or env('SECRET_KEY')
+
+DEBUG = True
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'), # or env('CLOUD_NAME')
+    'API_KEY': os.getenv('API_KEY'), # or env('API_KEY')
+    'API_SECRET': os.getenv('API_SECRET'), # or env('API_SECRET')
+}
+```
+
 #
 
 ### Running the App
