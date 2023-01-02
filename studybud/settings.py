@@ -17,7 +17,7 @@ import cloudinary_storage
 import dj_database_url
 
 # Initialise environment 
-# variablesenv = environ.Env()
+# env = environ.Env()
 # environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
