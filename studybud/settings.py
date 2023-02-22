@@ -100,12 +100,28 @@ WSGI_APPLICATION = 'studybud.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+DATABASE_URL="postgres://udodavid46.ud:bZ6F9xsYJpSN@ep-calm-night-915769.us-east-2.aws.neon.tech/studybud"
+
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'studybud',
+    'USER': 'udodavid46.ud',
+    'PASSWORD': 'bZ6F9xsYJpSN',
+    'HOST': 'ep-calm-night-915769.us-east-2.aws.neon.tech',
+    'PORT': '5432',
+  }
+}
+
+
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
 
 '''
 # import dj_database_url 
